@@ -1,0 +1,648 @@
+////////// COLOR SYSTEM //////////
+
+$blue: #5e50f9;
+$indigo: #6610f2;
+$purple: #6a008a;
+$pink: #e91e63;
+$red: #f96868;
+$orange: #f2a654;
+$yellow: #f6e84e;
+$green: #46c35f;
+$teal: #58d8a3;
+$cyan: #57c7d4;
+$black: #000;
+$white: #ffffff;
+$white-smoke: #f2f7f8;
+$violet: #41478a;
+$darkslategray: #2e383e;
+$dodger-blue: #3498db;
+
+// Gray colors
+$gray-100: #f3f6f9 !default;
+$gray-200: #ebedf3 !default;
+$gray-300: #e4e6ef !default;
+$gray-400: #d1d3e0 !default;
+$gray-500: #b5b5c3 !default;
+$gray-600: #7e8299 !default;
+$gray-700: #5e6278 !default;
+$gray-800: #3f4254 !default;
+$gray-900: #181c32 !default;
+
+// Dark colors
+$dark: $gray-900 !default;
+$dark-75: $gray-800 !default; // Custom variable
+$dark-65: $gray-700 !default; // Custom variable
+$dark-50: $gray-600 !default; // Custom variable
+$dark-25: $gray-400 !default; // Custom variable
+
+$colors: (
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: #434a54,
+  gray-light: #aab2bd,
+  gray-lighter: #e8eff4,
+  gray-lightest: #e6e9ed,
+  gray-dark: #12151e,
+  black: #000000,
+);
+
+$theme-colors: (
+  primary: #0090e7,
+  secondary: #e4eaec,
+  success: #00d25b,
+  info: #8f5fe8,
+  warning: #ffab00,
+  danger: #fc424a,
+  light: $white,
+  dark: #1e1e2d,
+);
+
+////////// COLOR SYSTEM //////////
+
+////////// COLOR VARIABLES //////////
+$content-bg: #eef0f8;
+$footer-bg: $content-bg;
+$footer-color: color(dark);
+$border-color: #2c2e33;
+$circle-border: rgb(26, 57, 85);
+$subheader-border: #ebedf3;
+$input-border-color: #e4e6ef;
+
+////////// COLOR VARIABLES //////////
+
+////////// SOCIAL COLORS //////////
+
+$social-colors: (
+  twitter: #2caae1,
+  facebook: #3b579d,
+  google: #dc4a38,
+  linkedin: #0177b5,
+  pinterest: #cc2127,
+  youtube: #e52d27,
+  github: #333333,
+  behance: #1769ff,
+  dribbble: #ea4c89,
+  reddit: #ff4500,
+);
+
+// Spinner
+$spinner-config: (
+  size: 1.5rem,
+  size-sm: 1.25rem,
+  size-lg: 2rem,
+) !default;
+
+// SVG Icon Sizes
+$svg-icon-sizes: (
+  sm: 1.1rem,
+  md: 1.5rem,
+  lg: 1.75rem,
+  xl: 2rem,
+  xxl: 2.25rem,
+  1x: 1rem,
+  2x: 2rem,
+  3x: 3rem,
+  4x: 4rem,
+  5x: 5rem,
+  6x: 6rem,
+  7x: 7rem,
+  8x: 8rem,
+  9x: 9rem,
+  10x: 10rem,
+  full: 100%,
+);
+
+$white-light: $white !default; // Custom variable
+$light-light: $gray-100 !default; // Custom variable
+$danger-light: #ffe2e5 !default; // Custom variable
+$warning-light: #fff4de !default; // Custom variable
+$info-light: #eee5ff !default; // Custom variable
+$success-light: #c9f7f5 !default; // Custom variable
+$secondary-light: $gray-200 !default; // Custom variable
+$primary-light: #e1f0ff !default; // Custom variable
+$dark-light: $gray-400 !default; // Custom variable
+
+$white-inverse: $dark-75 !default;
+$light-inverse: $gray-600 !default;
+$danger-inverse: $white !default;
+$warning-inverse: $white !default;
+$info-inverse: $white !default;
+$success-inverse: $white !default;
+$secondary-inverse: $dark-75 !default; // Custom variable
+$primary-inverse: $white !default;
+$dark-inverse: $white !default;
+
+// Extended theme text colors
+$theme-text-colors: (
+  "white": $white,
+  "primary": $primary,
+  "secondary": $dark,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "dark-75": $dark-75,
+  "dark-65": $dark-65,
+  "dark-50": $dark-50,
+  "dark-25": $dark-25,
+  "muted": $text-muted,
+) !default; // Custom variable
+
+// Extended inverse colors for Bootstrap theme colors
+$theme-inverse-colors: (
+  "white": $white-inverse,
+  "primary": $primary-inverse,
+  "secondary": $secondary-inverse,
+  "success": $success-inverse,
+  "info": $info-inverse,
+  "warning": $warning-inverse,
+  "danger": $danger-inverse,
+  "light": $light-inverse,
+  "dark": $dark-inverse,
+) !default; // Custom variable
+
+// Extended light colors for Bootstrap theme colors
+$theme-light-colors: (
+  "white": $white-light,
+  "primary": $primary-light,
+  "secondary": $secondary-light,
+  "success": $success-light,
+  "info": $info-light,
+  "warning": $warning-light,
+  "danger": $danger-light,
+  "light": $light-light,
+  "dark": $dark-light,
+) !default; // Custom variable
+
+////////// SOCIAL COLORS //////////
+
+////////// FONTS//
+
+// $font-family-base: Poppins;
+
+$font-family-base: Poppins, Helvetica, "sans-serif";
+$font-weight-light: 300;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$default-font-size: 0.875rem; // 14px as base font size
+
+// Text muted
+$text-muted: $gray-500 !default;
+$body-color: #1e1e2d;
+
+////////// FONT VARIABLES //////////
+
+$root-font-size: 13px; // Root font size for desktop mode
+$root-font-size-lg: 13px; // Root font size for tablet mode
+$root-font-size-md: 12px; // Root font size for mobile mode
+
+$font-weight-base: 400;
+
+// Checkbox
+$checkbox-config: (
+  transition: all 0.3s ease,
+  itemSpace: 1rem,
+  labelSpace: 0.75rem,
+  inlineItemSpace: 0.35rem,
+  types: (
+    solid: (
+      theme: (
+        base-color: $gray-200,
+      ),
+      sizes: (
+        default: (
+          base: 18px,
+          tick: 10px,
+        ),
+        lg: (
+          base: 24px,
+          tick: 12px,
+        ),
+      ),
+    ),
+    outline: (
+      theme: (
+        base-color: $gray-400,
+      ),
+      sizes: (
+        default: (
+          base: 18px,
+          tick: 10px,
+        ),
+        lg: (
+          base: 24px,
+          tick: 12px,
+        ),
+      ),
+    ),
+    accent: (
+      borderWidth: 3px,
+      sizes: (
+        default: (
+          base: 24px,
+          tick: 14px,
+        ),
+        lg: (
+          base: 30px,
+          tick: 10px,
+        ),
+      ),
+    ),
+  ),
+) !default;
+
+////////// CONTENT WRAPPER //////////
+
+$content-padding: 1.875rem 1.75rem;
+
+////////// CONTENT WRAPPER //////////
+
+// Transition
+$transition: all 0.15s ease !default; // Custom variable
+$transition-link: color 0.15s ease, background-color 0.15s ease,
+  border-color 0.15s ease, box-shadow 0.15s ease !default; // Custom variable
+$transition-input: color 0.15s ease, background-color 0.15s ease,
+  border-color 0.15s ease, box-shadow 0.15s ease !default; // Custom variable
+
+// Border Radiues
+$border-radius-sm: 0.28rem !default;
+$border-radius: 0.42rem !default;
+$border-radius-lg: 0.85rem !default;
+$border-radius-xl: 1.25rem !default; // Custom variable
+
+////////// SIDEBAR ////////
+$sidebar-width-lg: 244px;
+$sidebar-width-mini: 185px;
+$sidebar-width-icon: 70px;
+
+$sidebar-bg: map-get($theme-colors, "dark");
+$sidebar-menu-color: $text-muted;
+$sidebar-menu-active-bg: darken($sidebar-bg, 5%);
+$sidebar-menu-active-color: #ffffff;
+$sidebar-menu-hover-bg: darken($sidebar-bg, 5%);
+$sidebar-menu-hover-color: color(white);
+$sidebar-submenu-color: $sidebar-menu-color;
+$sidebar-submenu-hover-bg: initial;
+$sidebar-submenu-hover-color: #ffffff;
+
+$sidebar-menu-icon-color: #bba8bff5;
+$sidebar-menu-arrow-color: rgba($text-muted, 0.36);
+
+$sidebar-menu-font-size: 0.9375rem;
+$sidebar-menu-padding-y: 0.8rem;
+$sidebar-menu-padding-x: 1.188rem;
+$rtl-sidebar-submenu-padding: 0 1.5rem 0 0;
+
+$sidebar-submenu-font-size: 0.855rem;
+$sidebar-submenu-item-padding: 0.5rem 0.35rem;
+
+$sidebar-icon-font-size: 1rem;
+$sidebar-arrow-font-size: 0.625rem;
+
+$sidebar-profile-bg: transparent;
+$sidebar-profile-padding: 0.75rem 1.625rem 0.75rem 1.188rem;
+
+$sidebar-mini-menu-padding: 0.8125rem 1rem 0.8125rem 1rem;
+
+$sidebar-icon-only-menu-padding: 0.5rem 1.625rem 0.5rem 1.188rem;
+$sidebar-icon-only-submenu-padding: 0 0 0 1.5rem;
+
+$icon-only-collapse-width: 190px;
+$icon-only-menu-bg: darken($sidebar-bg, 5%);
+
+///////// SIDEBAR ////////
+
+///////// NAVBAR ////////
+
+$navbar-height: 70px;
+$navbar-bg: $white;
+$navbar-menu-color: #6c7293;
+$navbar-font-size: 0.9375rem;
+$navbar-icon-font-size: 1.125rem;
+$navbar-box-shadow: 0px 0px 0px 0px rgba(82, 63, 105, 0.08);
+
+///////// NAVBAR ////////
+
+///////// SUBHEADER ////////
+
+$subheader-height: 55px;
+$subheader-bg: $white;
+$subheader-menu-color: #ffffff;
+$subheader-font-size: 0.9375rem;
+$subheader-icon-font-size: 1.125rem;
+$subheader-box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.08);
+$subheader-border-color: $subheader-border;
+
+///////// SUBHEADER ////////
+
+///////// CARD ////////
+$card-box-shadow: 0px 0px 30px 0px rgba(82, 63, 105, 0.05) !default; // card custom shadow
+$card-border-color: $gray-200 !default;
+$card-cap-bg: $white !default;
+$card-spacer-y: 2rem !default;
+$card-spacer-x: 2.25rem !default;
+$card-border-radius: $border-radius !default;
+
+$card-header-spacer-y: 0.5rem !default; // Custom variable
+$card-header-height: 70px !default; // Custom variable
+$card-sticky-header-bg: $white !default; // Custom variable
+$card-sticky-header-height: 70px !default; // Custom variable
+$card-sticky-zindex: 101 !default; // Custom variable
+$card-sticky-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.1) !default; // Custom variable
+
+// $card-bg: #191c24;
+// $card-header-height: 70px !default; // Custom variable
+
+// $card-box-shadow: 0px 0px 30px 0px rgba(82, 63, 105, 0.05) !default; // card custom shadow
+// $card-description-color: #bfbfbf;
+// $card-title-color: #ffffff;
+///////// CARD ////////
+
+///////// BUTTONS ////////
+
+$button-fixed-width: 150px;
+$btn-padding-y: 0.375rem;
+$btn-padding-x: 0.75rem;
+$btn-line-height: 1;
+
+$btn-padding-y-xs: 0.5rem;
+$btn-padding-x-xs: 0.75rem;
+
+$btn-padding-y-sm: 0.25rem;
+$btn-padding-x-sm: 0.5rem;
+
+$btn-padding-y-lg: 1rem;
+$btn-padding-x-lg: 3rem;
+
+$btn-font-size: 0.9375rem;
+$btn-font-size-xs: 0.625rem;
+$btn-font-size-sm: 0.875rem;
+$btn-font-size-lg: 0.875rem;
+
+$btn-border-radius: 0.1875rem;
+$btn-border-radius-xs: 0.1875rem;
+$btn-border-radius-sm: 0.1875rem;
+$btn-border-radius-lg: 0.1875rem;
+
+$btn-icon-size-xs: 24px !default;
+///////// BUTTONS ////////
+
+////////// TOOLTIP VARIABLES //////////
+
+//default styles
+$tooltip-font-size: 0.75rem;
+$tooltip-padding-y: 0.4rem;
+$tooltip-padding-x: 0.75rem;
+$tooltip-border-radius: 0.375rem;
+
+////////// TOOLTIP VARIABLES //////////
+$popover-bg: theme-color(dark);
+$popover-border-color: $border-color;
+$popover-arrow-color: $popover-bg;
+$popover-arrow-outer-color: $popover-border-color;
+$popover-header-bg: $popover-bg;
+
+/////////  FORMS /////////
+
+$form-group-margin-bottom: 1.75rem !default;
+$form-label-font-size: 0.8rem !default; // Custom variable
+$form-label-font-weight: 400 !default; // Custom variable
+$form-feedback-font-size: 0.9rem !default; // Custom variable
+$form-feedback-font-weight: 400 !default; // Custom variable
+$form-text-font-size: 0.9rem !default; // Custom variable
+$form-text-font-weight: 400 !default; // Custom variable
+$form-validation-input-shadow: false; // Custom variable
+
+$input-bg: $white;
+$input-color: #3f4254;
+$input-border-radius: $border-radius;
+$input-border-color: $input-border-color;
+$input-disabled-bg: $gray-100 !default;
+$input-readonly-bg: $white !default; // Custom variable
+$input-placeholder-color: lighten($input-bg, 15%);
+$input-placeholder-font-size: 0.875rem;
+$input-font-size: 1rem;
+
+$input-solid-bg: $gray-100; // Custom variable
+$input-solid-bg-focus: $gray-200; // Custom variable
+$input-solid-placeholder-color: $input-placeholder-color; // Custom variable
+$input-solid-color: $dark-75; // Custom variable
+
+$input-padding-y: 0.65rem;
+$input-padding-x: 1rem;
+$input-line-height: 1.5;
+
+$input-padding-y-xs: 0.5rem;
+$input-padding-x-xs: 0.75rem;
+
+$input-padding-y-sm: 0.5rem;
+$input-padding-x-sm: 0.81rem;
+
+$input-padding-y-lg: 0.94rem;
+$input-padding-x-lg: 1.94rem;
+
+$input-height: calc(1.3em + 1rem + 2px);
+$input-height-sm: 2rem;
+$input-height-lg: 3.175rem;
+
+///////// FORMS /////////
+
+////////  DROPDOWNS ///////
+
+$dropdown-bg: $card-bg;
+$dropdown-color: $body-color;
+$dropdown-item-hover-color: $white;
+$dropdown-border-color: $border-color;
+$dropdown-divider-bg: $border-color;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-bg: darken($card-bg, 3%);
+$dropdown-header-color: $body-color;
+$dropdown-menu-box-shadow: none;
+
+////////  DROPDOWNS ///////
+
+////////  PROGRESSBAR ///////
+$progress-bg: #2f323a;
+////////  PROGRESSBAR ///////
+
+//////// TABLES ////////
+
+// Table
+$table-bg: transparent !default;
+$table-accent-bg: $gray-200 !default;
+$table-hover-bg: $gray-300 !default;
+$table-active-bg: $table-hover-bg !default;
+
+$table-border-color: $gray-200 !default;
+$table-head-bg: $gray-100 !default;
+$table-head-color: $dark-75 !default;
+$table-head-font-size: 1rem !default; // Custom variable
+$table-head-font-weight: 600 !default; // Custom variable
+
+$table-dark-color: $white !default;
+$table-dark-bg: $dark !default;
+$table-dark-accent-bg: rgba($white, 0.05) !default;
+$table-dark-hover-color: $table-dark-color !default;
+$table-dark-hover-bg: rgba($white, 0.075) !default;
+$table-dark-border-color: lighten($table-dark-bg, 7.5%) !default;
+
+$table-head-bg: $gray-100 !default; // Custom variable
+$table-compact-head-font-size: 0.72rem !default; // Custom variable
+$table-compact-head-color: #b5b5c3 !default; // Custom variable
+$table-compact-head-text-transform: uppercase !default; // Custom variable
+$table-compact-head-font-weight: 600 !default; // Custom variable
+$table-compact-head-font-weight: 600 !default; // Custom variable
+$table-compact-head-letter-spacing: 0.1rem !default; // Custom variable
+
+$table-accent-bg: $content-bg;
+$table-hover-bg: $content-bg;
+$table-cell-padding: 0.6rem;
+$table-border-color: #ebedf3;
+$table-inverse-bg: #2a2b32;
+$table-inverse-color: color(white);
+
+//////// TABLES ////////
+
+////////// MEASUREMENT AND PROPERTY VARIABLES //////////
+
+$border-property: 1px solid $border-color;
+$card-spacing-y: 2.5rem;
+$card-padding-y: 1.75rem;
+$card-padding-x: 1.5625rem;
+$card-border-radius: 0.25rem;
+$card-description-color: #76838f;
+$grid-gutter-width: 1.5rem;
+$action-transition-duration: 0.25s;
+$action-transition-timing-function: ease;
+$card-bg-varient: #fff;
+$border-width: 1px;
+////////// OTHER VARIABLES //////////
+
+////////// BREAD CRUMBS VARIABLES //////////
+
+// default styles
+$breadcrumb-padding-y: 0.56rem;
+$breadcrumb-padding-x: 1.13rem;
+$breadcrumb-item-padding: 0.5rem;
+$breadcrumb-margin-bottom: 1rem;
+$breadcrumb-font-size: $default-font-size;
+$breadcrumb-bg: transparent;
+$breadcrumb-border-color: $border-color;
+$breadcrumb-divider-color: $gray-600;
+$breadcrumb-active-color: $gray-700;
+$breadcrumb-divider: "/";
+
+// custom styles
+$breadcrumb-custom-padding-y: 0;
+$breadcrumb-custom-padding-x: 0;
+$breadcrumb-custom-item-padding-y: 0.56rem;
+$breadcrumb-custom-item-padding-x: 10px;
+$breadcrumb-custom-item-color: #fffff0;
+$breadcrumb-item-bg: #141414;
+
+////////// BREAD CRUMBS VARIABLES //////////
+
+////////// MODALS VARIABLES //////////
+
+$modal-inner-padding: 0.9375rem;
+$modal-dialog-margin: 10px;
+$modal-dialog-margin-y-sm-up: 30px;
+$modal-title-line-height: $line-height-base;
+$modal-content-bg: $content-bg;
+$modal-content-box-shadow-xs: 0 3px 9px rgba($black, 0.5);
+$modal-content-box-shadow-sm-up: 0 5px 15px rgba($black, 0.5);
+
+$modal-backdrop-bg: $black;
+$modal-backdrop-opacity: 0.5;
+
+$modal-header-border-color: $border-color;
+$modal-content-border-color: $border-color;
+$modal-footer-border-color: $border-color;
+
+$modal-header-border-width: $border-width;
+$modal-content-border-width: $border-width;
+$modal-footer-border-width: $border-width;
+
+$modal-header-padding-x: 26px;
+$modal-header-padding-y: 25px;
+
+$modal-body-padding-x: 26px;
+$modal-body-padding-y: 35px;
+
+$modal-footer-padding-x: 31px;
+$modal-footer-padding-y: 15px;
+
+$modal-lg: 90%;
+$modal-md: 500px;
+$modal-sm: 300px;
+$modal-transition: transform 0.4s ease;
+
+////////// MODALS VARIABLES //////////
+
+/////////  PAGINATION VARIABLES //////////
+$pagination-bg: $content-bg;
+/////////  PAGINATION VARIABLES //////////
+
+/////////  TABS VARIABLES //////////
+$nav-tabs-border-color: $border-color;
+$nav-tabs-link-bg: $content-bg;
+$nav-tabs-link-color: $body-color;
+$nav-tabs-link-hover-border-color: $nav-tabs-border-color $nav-tabs-border-color
+  $nav-tabs-border-color;
+$nav-tabs-link-active-color: $body-color;
+$nav-tabs-link-active-bg: darken($content-bg, 5%);
+$nav-tabs-link-active-border-color: $nav-tabs-border-color
+  $nav-tabs-border-color $nav-tabs-link-active-bg;
+$nav-pills-custom-bg: #8489ab;
+$text-gray: gray;
+$circle-img-border: $white;
+////////   TABS VARIABLES /////////
+
+////////   CALENDAR  //////////////
+$fullcalendar-color: #a8b2b9;
+////////   CALENDAR  //////////////
+
+///////// SETTINGS PANEL ////////
+$settings-panel-width: 300px;
+///////// SETTINGS PANEL ////////
+
+////////// Vendor file asset path //////////
+$mdi-font-path: "~@mdi/font/fonts";
+$fa-font-path: "~font-awesome/fonts/";
+$flag-icon-css-path: "~flag-icon-css/flags/";
+$simple-line-font-path: "~simple-line-icons/fonts/";
+
+///////// BOXED LAYOUT ///////
+$boxed-container-width: 1200px;
+$boxed-layout-bg: #c6c8ca;
+///////// BOXED LAYOUT ///////
+
+///////// TICKETS-TAB ///////
+$tab-head-bg: #0f1015;
+$accent-color: $white;
+///////// TICKETS-TAB ///////
+
+///////// LANDING PAGE ///////
+$landing-bg: #1a142dfa;
+$landing-bg-color: $content-bg;
+///////// LANDING PAGE ///////
+
+///////// CHATS ///////
+$chat-container-height: 100%;
+$chat-bottom-btn: $input-bg;
+$form-focus-bg: $white;
+///////// CHATS ///////
+
+$bullet-line-list-shape-bg: color(white) !default;

@@ -1,0 +1,69 @@
+//
+// SVG Icon
+//
+
+@function get($map, $keys...) {
+  @if length($keys) == 1 {
+    $keys: nth($keys, 1);
+  }
+
+  @if type-of($map) != "map" or $map == null {
+    //@return false;
+  }
+
+  $warn: "#{nth($keys, 1)}";
+  $length: length($keys);
+  $get: map-get($map, nth($keys, 1));
+
+  @if $length > 1 {
+    @for $i from 2 through $length {
+      @if $get != null and type-of($get) == "map" {
+        $warn: $warn + "->#{nth($keys, $i)}";
+        $get: map-get($get, nth($keys, $i));
+
+        @if $get == null {
+          @return null;
+        }
+      } @else {
+        @return get-warning($warn, $get, nth($keys, $i));
+      }
+    }
+  }
+
+  @return $get;
+}
+
+.svg-icon {
+  @include svg-icon-size(get($svg-icon-sizes, md));
+  @include svg-icon-color($text-muted);
+
+  // Theme colors
+  @each $name, $color in $theme-text-colors {
+    &.svg-icon-#{$name} {
+      @include svg-icon-color($color, true);
+    }
+    &.svg-logo-#{$name} {
+      @include svg-logo-color($color, true);
+    }
+  }
+
+  // Responsive icon sizes
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      // Sizes
+      @each $name, $value in $svg-icon-sizes {
+        &.svg-icon#{$infix}-#{$name} {
+          @include svg-icon-size($value, true);
+        }
+      }
+    }
+  }
+
+  &.svg-icon-flip {
+    svg {
+      transform: scaleX(-1);
+    }
+  }
+}

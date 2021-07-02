@@ -1,0 +1,32 @@
+.subheader {
+  top: 70px;
+  right: 0;
+  left: $sidebar-width-lg;
+  margin: 0;
+  height: $subheader-height;
+  z-index: 95;
+  position: fixed;
+  border-top: 1px solid $subheader-border-color;
+  box-shadow: $subheader-box-shadow;
+  font-weight: normal;
+  background-color: $subheader-bg;
+  transition: left $action-transition-duration
+    $action-transition-timing-function;
+  -webkit-transition: left $action-transition-duration
+    $action-transition-timing-function;
+  -moz-transition: left $action-transition-duration
+    $action-transition-timing-function;
+  -ms-transition: left $action-transition-duration
+    $action-transition-timing-function;
+
+  @media (max-width: 992px) {
+    left: 0;
+  }
+}
+@media (max-width: 991px) {
+  .subheader {
+    flex-direction: row;
+  }
+}
+@media (max-width: 480px) {
+}
