@@ -5,6 +5,9 @@ function DashboardPage() {
     <div>
       <div className="row">
         <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
+          <h1>Dashboard</h1>
+        </div>
+        {/* <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div className="card">
             <div className="card-body">
               <div className="row">
@@ -94,6 +97,7 @@ function DashboardPage() {
             </div>
           </div>
         </div>
+      */}
       </div>
     </div>
   );

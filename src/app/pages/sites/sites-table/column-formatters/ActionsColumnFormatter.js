@@ -1,6 +1,7 @@
 import React from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import SVG from "react-inlinesvg";
+import { toAbsoluteUrl } from "./../../../../../_ui/layout/utilities/AssetsUtilities";
 
 export const ActionsColumnFormatter = (
   cellContent,
@@ -17,7 +18,7 @@ export const ActionsColumnFormatter = (
         onClick={() => openEditSitePage(row.id)}
       >
         <span className="svg-icon svg-icon-sm svg-icon-primary">
-          <SVG src="/assets/images/icons/svg/pencil.svg" />
+          <SVG src={toAbsoluteUrl("/assets/images/icons/svg/pencil.svg")} />
         </span>
       </a>
     </OverlayTrigger>
@@ -31,7 +32,7 @@ export const ActionsColumnFormatter = (
         onClick={() => openDeleteSiteDialog(row.id)}
       >
         <span className="svg-icon svg-icon-sm svg-icon-danger">
-          <SVG src="/assets/images/icons/svg/trash.svg" />
+          <SVG src={toAbsoluteUrl("/assets/images/icons/svg/trash.svg")} />
         </span>
       </a>
     </OverlayTrigger>
