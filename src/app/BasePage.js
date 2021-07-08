@@ -154,7 +154,7 @@ function BasePage() {
         )}
 
         {/* dashboard */}
-        {/* <Route path="/" component={DashboardPage} /> */}
+        <Route path="/" component={DashboardPage} />
       </Switch>
     </Suspense>
   );
