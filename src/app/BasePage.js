@@ -53,8 +53,6 @@ function BasePage() {
   return (
     <Suspense fallback={<SplashScreen />}>
       <Switch>
-        <Route path="/" component={InstallationsPage} />
-
         {/* users */}
         {permissions.grantedPermissions["Pages.Users"] && (
           <Switch path="/users">
@@ -142,6 +140,16 @@ function BasePage() {
               component={AppointmentStatusEdit}
             />
             <Route path="/" component={AppointmentStatusesPage} />
+          </Switch>
+        )}
+
+        {/* users */}
+        {permissions.grantedPermissions["Pages.Users"] && (
+          <Switch path="/probe-application">
+            <Route
+              path="/probe-application/installations"
+              component={InstallationsPage}
+            />
           </Switch>
         )}
 

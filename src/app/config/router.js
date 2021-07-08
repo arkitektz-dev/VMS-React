@@ -8,6 +8,8 @@ import AppointmentsPage from "../pages/appointments/AppointmentsPage";
 import AssignedSitesPage from "../pages/assigned-sites/AssignedSitesPage";
 import AppointmentStatusesPage from "../pages/appointment-statuses/AppointmentStatusesPage";
 
+import InstallationsPage from "../pages/probe-application/installations/InstallationsPage";
+
 export const appRouters = [
   {
     path: "/users",
@@ -96,6 +98,16 @@ export const appRouters = [
     permission: "Pages.AppointmentStatuses",
     title: "Appointment Statuses",
     component: AppointmentStatusesPage,
+    isLayout: true,
+    showInMenu: false,
+  },
+  {
+    path: "/probe-application/installations",
+    exact: true,
+    name: "users",
+    permission: "Pages.Users",
+    title: "Probe Application",
+    component: InstallationsPage,
     isLayout: true,
     showInMenu: false,
   },

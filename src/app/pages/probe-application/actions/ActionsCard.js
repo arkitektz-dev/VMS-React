@@ -12,7 +12,7 @@ function ActionsCard() {
     const linkSource = `data:application/octet-stream;base64,${base64Data}`;
     const downloadLink = document.createElement("a");
     downloadLink.href = linkSource;
-    downloadLink.download = "test.msi";
+    downloadLink.download = "ProbeApplicationSetup.msi";
     downloadLink.click();
   }
 
