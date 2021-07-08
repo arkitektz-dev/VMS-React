@@ -40,6 +40,8 @@ import AppointmentStatusesPage from "./pages/appointment-statuses/AppointmentSta
 import AppointmentStatusEdit from "./pages/appointment-statuses/appointment-status-edit/AppointmentStatusEdit";
 import AppointmentStatusNew from "./pages/appointment-statuses/appointment-status-new/AppointmentStatusNew";
 
+import InstallationsPage from "./pages/probe-application/installations/InstallationsPage";
+
 function BasePage() {
   const { permissions } = useSelector(
     ({ auth }) => ({
@@ -51,6 +53,8 @@ function BasePage() {
   return (
     <Suspense fallback={<SplashScreen />}>
       <Switch>
+        <Route path="/" component={InstallationsPage} />
+
         {/* users */}
         {permissions.grantedPermissions["Pages.Users"] && (
           <Switch path="/users">
@@ -142,7 +146,7 @@ function BasePage() {
         )}
 
         {/* dashboard */}
-        <Route path="/" component={DashboardPage} />
+        {/* <Route path="/" component={DashboardPage} /> */}
       </Switch>
     </Suspense>
   );
