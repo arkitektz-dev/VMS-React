@@ -18,36 +18,41 @@ function Routes() {
 
   return (
     <Switch>
-      {!isAuthorized ? (
-        /*Render auth page when user at `/auth` and not authorized.*/
-        <Route>
-          <AuthPage />
-        </Route>
-      ) : (
-        /*Otherwise redirect to root page (`/`)*/
-        <Redirect from="/auth" to="/" />
-      )}
-
-      {!isAuthorized ? (
-        /*Redirect to `/auth` when user is not authorized*/
-        <Redirect to="/auth/login" />
-      ) : (
-        <>
-          <Switch>
-            <Route path="/settings">
-              <SettingsLayout>
-                <SettingsPage />
-              </SettingsLayout>
-            </Route>
-            <Route>
-              <Layout>
-                <BasePage />
-              </Layout>
-            </Route>
-          </Switch>
-        </>
-      )}
+      <SettingsLayout>
+        <SettingsPage />
+      </SettingsLayout>
     </Switch>
+    // <Switch>
+    //   {!isAuthorized ? (
+    //     /*Render auth page when user at `/auth` and not authorized.*/
+    //     <Route>
+    //       <AuthPage />
+    //     </Route>
+    //   ) : (
+    //     /*Otherwise redirect to root page (`/`)*/
+    //     <Redirect from="/auth" to="/" />
+    //   )}
+
+    //   {!isAuthorized ? (
+    //     /*Redirect to `/auth` when user is not authorized*/
+    //     <Redirect to="/auth/login" />
+    //   ) : (
+    //     <>
+    //       <Switch>
+    //         <Route path="/settings">
+    //           <SettingsLayout>
+    //             <SettingsPage />
+    //           </SettingsLayout>
+    //         </Route>
+    //         <Route>
+    //           <Layout>
+    //             <BasePage />
+    //           </Layout>
+    //         </Route>
+    //       </Switch>
+    //     </>
+    //   )}
+    // </Switch>
   );
 }
 

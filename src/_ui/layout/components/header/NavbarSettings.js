@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import UserProfileDropdown from "../extras/dropdowns/UserProfileDropdown";
 import SiteSelectorDropdown from "../extras/dropdowns/SiteSelectorDropdown";
 
-function Navbar() {
+function NavbarSettings() {
   return (
-    <nav className="navbar p-0 fixed-top d-flex flex-row">
+    <nav className="navbar p-0 fixed-top d-flex flex-row" style={{left: 0}}>
       <div className="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
         <Link className="navbar-brand brand-logo-mini" to="/">
           <img
@@ -15,13 +15,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-        <button
-          className="navbar-toggler align-self-center"
-          type="button"
-          onClick={() => document.body.classList.toggle("sidebar-icon-only")}
-        >
-          <span className="mdi mdi-menu"></span>
-        </button>
+    
 
         <ul className="navbar-nav navbar-nav-right">
           {/* <SiteSelectorDropdown /> */}
@@ -33,4 +27,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavbarSettings;
