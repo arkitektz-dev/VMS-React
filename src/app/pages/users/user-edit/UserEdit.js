@@ -77,7 +77,7 @@ function UserEdit({
   };
 
   const backToUsersList = () => {
-    history.push(`/users`);
+    history.push(`/settings/users`);
   };
 
   return (

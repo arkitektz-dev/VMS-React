@@ -43,7 +43,7 @@ function TenantNew({ history }) {
   };
 
   const backToTenantsList = () => {
-    history.push(`/tenants`);
+    history.push(`/settings/tenants`);
   };
 
   return (

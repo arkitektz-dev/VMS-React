@@ -8,13 +8,13 @@ import AppointmentStatusesUIProvider from "./AppointmentStatusesUIContext";
 function AppointmentStatusesPage({ history }) {
   const appointmentStatusesUIEvents = {
     newAppointmentStatusButtonClick: () => {
-      history.push("/appointment-statuses/new");
+      history.push("/settings/appointment-statuses/new");
     },
     openEditAppointmentStatusPage: (id) => {
-      history.push(`/appointment-statuses/${id}/edit`);
+      history.push(`/settings/appointment-statuses/${id}/edit`);
     },
     openDeleteAppointmentStatusDialog: (id) => {
-      history.push(`/appointment-statuses/${id}/delete`);
+      history.push(`/settings/appointment-statuses/${id}/delete`);
     },
   };
 
@@ -24,13 +24,13 @@ function AppointmentStatusesPage({ history }) {
     >
       <AppointmentStatusesLoadingDialog />
 
-      <Route path="/appointment-statuses/:id/delete">
+      <Route path="/settings/appointment-statuses/:id/delete">
         {({ history, match }) => (
           <AppointmentStatusDeleteDialog
             show={match != null}
             id={match && match.params.id}
             onHide={() => {
-              history.push("/appointment-statuses");
+              history.push("/settings/appointment-statuses");
             }}
           />
         )}

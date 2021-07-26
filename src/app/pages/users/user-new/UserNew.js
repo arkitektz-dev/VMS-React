@@ -56,7 +56,7 @@ function UserNew({ history }) {
   };
 
   const backToUsersList = () => {
-    history.push(`/users`);
+    history.push(`/settings/users`);
   };
 
   return (

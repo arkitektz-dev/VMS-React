@@ -44,7 +44,7 @@ function RoleNew({ history }) {
   };
 
   const backToRolesList = () => {
-    history.push(`/roles`);
+    history.push(`/settings/roles`);
   };
 
   return (

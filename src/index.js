@@ -14,38 +14,24 @@ const abp = window.abp;
 
 setupAxiosInterceptors();
 
-ReactDOM.render(
-  <Provider store={store}>
-    <SubheaderProvider>
-      <BrandingProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </BrandingProvider>
-    </SubheaderProvider>
-  </Provider>,
-  document.getElementById("root")
-);
+ConfigurationRepository.getAll().then((response) => {
+  Utils.extend(true, abp, response.data.result);
+  abp.clock.provider = Utils.getCurrentClockProvider(
+    response.data.result.clock.provider
+  );
 
-// ConfigurationRepository.getAll().then((data) => {
-//   console.log(data);
-//   Utils.extend(true, abp, data.data.result);
-//   abp.clock.provider = Utils.getCurrentClockProvider(
-//     data.data.result.clock.provider
-//   );
+  ReactDOM.render(
+    <Provider store={store}>
+      <SubheaderProvider>
+        <BrandingProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </BrandingProvider>
+      </SubheaderProvider>
+    </Provider>,
+    document.getElementById("root")
+  );
 
-//   ReactDOM.render(
-//     <Provider store={store}>
-//       <SubheaderProvider>
-//         <BrandingProvider>
-//           <BrowserRouter>
-//             <App />
-//           </BrowserRouter>
-//         </BrandingProvider>
-//       </SubheaderProvider>
-//     </Provider>,
-//     document.getElementById("root")
-//   );
-
-//   serviceWorker.unregister();
-// });
+  serviceWorker.unregister();
+});

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { Input, TextArea } from "./../../../../_ui/layout/elements";
+import AsyncSelect from "react-select/async";
 import * as Yup from "yup";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import AppointmentRepository from "../../../repositories/appointment/appointmentRepository";
 
 // Validation schema
 const AppointmentNewSchema = Yup.object().shape({
@@ -16,14 +17,28 @@ const AppointmentNewSchema = Yup.object().shape({
 });
 
 function AppointmentNewForm({ appointment, btnRef, saveAppointment }) {
-  // Getting users and visitors list from store
-  const { users, visitors } = useSelector(
-    (state) => ({
-      users: state.users.entities,
-      visitors: state.visitors.entities,
-    }),
-    shallowEqual
-  );
+  const [users, setUsers] = useState([]);
+
+  const visitorOptions = async (inputValue) => {
+    const response = await AppointmentRepository.getVisitorsByKeyword({
+      term: inputValue,
+    });
+    const options = response.data.result.map((visitor) => ({
+      value: visitor.id,
+      label: visitor.fullNameWithContactNumber,
+    }));
+
+    return new Promise((resolve) => {
+      resolve(options);
+    });
+  };
+
+  const onVisitorChange = async (visitorId) => {
+    const response = await AppointmentRepository.getVisitorsByKeyword({
+      term: visitorId,
+    });
+    setUsers(response.data.result);
+  };
 
   return (
     <>
@@ -35,25 +50,21 @@ function AppointmentNewForm({ appointment, btnRef, saveAppointment }) {
           saveAppointment(values);
         }}
       >
-        {({ values, handleSubmit }) => (
+        {({ values, setFieldValue, handleSubmit }) => (
           <>
             <Form className="form form-label-right">
               <div className="form-group row">
                 <div className="col-lg-6">
-                  <Field
-                    as="select"
+                  <AsyncSelect
+                    cacheOptions
+                    defaultOptions
+                    loadOptions={visitorOptions}
+                    onChange={({ value }) => {
+                      onVisitorChange(value);
+                      setFieldValue("visitorId", value);
+                    }}
                     name="visitorId"
-                    className="form-control"
-                    label="Visitor"
-                  >
-                    <option value="">Please Select Visitor</option>
-                    {visitors &&
-                      visitors.map((visitor) => (
-                        <option key={visitor.id} value={visitor.id}>
-                          {visitor.firstName}
-                        </option>
-                      ))}
-                  </Field>
+                  />
                 </div>
                 <div className="col-lg-6">
                   <Field

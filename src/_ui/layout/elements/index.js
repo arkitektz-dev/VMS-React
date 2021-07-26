@@ -20,3 +20,6 @@ export { Pagination } from "./pagination/Pagination";
 export { Input } from "./inputs/Input";
 export { TextArea } from "./inputs/TextArea";
 export { Checkbox } from "./inputs/Checkbox";
+
+// widgets
+export { Tile } from "./widgets/Tile";

@@ -8,7 +8,9 @@ import InstallationsUIProvider from "./InstallationsUIContext";
 function InstallationsPage({ history }) {
   const installationsUIEvents = {
     openUpdateInstallationStatusDialog: (id) => {
-      history.push(`/probe-application/installations/${id}/updateStatus`);
+      history.push(
+        `/settings/probe-application/installations/${id}/updateStatus`
+      );
     },
   };
 
@@ -16,13 +18,13 @@ function InstallationsPage({ history }) {
     <InstallationsUIProvider installationsUIEvents={installationsUIEvents}>
       <InstallationsLoadingDialog />
 
-      <Route path="/probe-application/installations/:id/updateStatus">
+      <Route path="/settings/probe-application/installations/:id/updateStatus">
         {({ history, match }) => (
           <InstallationUpdateStatusDialog
             show={match != null}
             id={match && match.params.id}
             onHide={() => {
-              history.push("/probe-application/installations");
+              history.push("/settings/probe-application/installations");
             }}
           />
         )}

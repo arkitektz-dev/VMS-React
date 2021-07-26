@@ -8,13 +8,13 @@ import TenantsUIProvider from "./TenantsUIContext";
 function TenantsPage({ history }) {
   const tenantsUIEvents = {
     newTenantButtonClick: () => {
-      history.push("/tenants/new");
+      history.push("/settings/tenants/new");
     },
     openEditTenantPage: (id) => {
-      history.push(`/tenants/${id}/edit`);
+      history.push(`/settings/tenants/${id}/edit`);
     },
     openDeleteTenantDialog: (id) => {
-      history.push(`/tenants/${id}/delete`);
+      history.push(`/settings/tenants/${id}/delete`);
     },
   };
 
@@ -22,13 +22,13 @@ function TenantsPage({ history }) {
     <TenantsUIProvider tenantsUIEvents={tenantsUIEvents}>
       <TenantsLoadingDialog />
 
-      <Route path="/tenants/:id/delete">
+      <Route path="/settings/tenants/:id/delete">
         {({ history, match }) => (
           <TenantDeleteDialog
             show={match != null}
             id={match && match.params.id}
             onHide={() => {
-              history.push("/tenants");
+              history.push("/settings/tenants");
             }}
           />
         )}

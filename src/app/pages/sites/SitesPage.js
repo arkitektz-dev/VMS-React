@@ -8,13 +8,13 @@ import SitesUIProvider from "./SitesUIContext";
 function SitesPage({ history }) {
   const sitesUIEvents = {
     newSiteButtonClick: () => {
-      history.push("/sites/new");
+      history.push("/settings/sites/new");
     },
     openEditSitePage: (id) => {
-      history.push(`/sites/${id}/edit`);
+      history.push(`/settings/sites/${id}/edit`);
     },
     openDeleteSiteDialog: (id) => {
-      history.push(`/sites/${id}/delete`);
+      history.push(`/settings/sites/${id}/delete`);
     },
   };
 
@@ -22,13 +22,13 @@ function SitesPage({ history }) {
     <SitesUIProvider sitesUIEvents={sitesUIEvents}>
       <SitesLoadingDialog />
 
-      <Route path="/sites/:id/delete">
+      <Route path="/settings/sites/:id/delete">
         {({ history, match }) => (
           <SiteDeleteDialog
             show={match != null}
             id={match && match.params.id}
             onHide={() => {
-              history.push("/sites");
+              history.push("/settings/sites");
             }}
           />
         )}

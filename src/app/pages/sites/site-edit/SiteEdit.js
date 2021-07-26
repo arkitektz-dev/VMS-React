@@ -65,7 +65,7 @@ function SiteEdit({
   };
 
   const backToSitesList = () => {
-    history.push(`/sites`);
+    history.push(`/settings/sites`);
   };
 
   return (

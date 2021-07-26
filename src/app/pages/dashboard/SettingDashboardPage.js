@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Tile } from "./../../../_ui/layout/elements";
 
 function SettingDashboardPage() {
   return (
@@ -7,7 +8,7 @@ function SettingDashboardPage() {
       <div className="row">
         <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div className="card">
-            <Link to="/users">
+            <Link to="/settings/users">
               <div className="card-body">
                 <div className="row">
                   <div className="col-9">
@@ -29,7 +30,7 @@ function SettingDashboardPage() {
         </div>
         <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div className="card">
-            <Link to="/roles">
+            <Link to="/settings/roles">
               <div className="card-body">
                 <div className="row">
                   <div className="col-9">
@@ -51,7 +52,7 @@ function SettingDashboardPage() {
         </div>
         <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div className="card">
-            <Link to="/sites">
+            <Link to="/settings/sites">
               <div className="card-body">
                 <div className="row">
                   <div className="col-9">
@@ -73,7 +74,7 @@ function SettingDashboardPage() {
         </div>
         <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div className="card">
-            <Link to="/assigned-sites">
+            <Link to="/settings/assigned-sites">
               <div className="card-body">
                 <div className="row">
                   <div className="col-9">
@@ -95,8 +96,7 @@ function SettingDashboardPage() {
         </div>
         <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div className="card">
-            <Link to="/appointment-statuses">
-
+            <Link to="/settings/appointment-statuses">
               <div className="card-body">
                 <div className="row">
                   <div className="col-9">
@@ -118,7 +118,7 @@ function SettingDashboardPage() {
         </div>
         <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div className="card">
-            <Link to="/probe-application">
+            <Link to="/settings/probe-application">
               <div className="card-body">
                 <div className="row">
                   <div className="col-9">
@@ -140,7 +140,7 @@ function SettingDashboardPage() {
         </div>
         <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div className="card">
-            <Link to="/login-options">
+            <Link to="/settings/login-options">
               <div className="card-body">
                 <div className="row">
                   <div className="col-9">

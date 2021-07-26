@@ -65,9 +65,9 @@ function UserProfileDropdown() {
           </div>
         </Dropdown.Item>
         <Dropdown.Divider />
-        <p className="p-3 mb-0 text-center">
+        {/* <p className="p-3 mb-0 text-center">
           <Trans>Advanced settings</Trans>
-        </p>
+        </p> */}
       </Dropdown.Menu>
     </Dropdown>
   );

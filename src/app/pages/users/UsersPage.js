@@ -8,26 +8,26 @@ import UsersUIProvider from "./UsersUIContext";
 function UsersPage({ history }) {
   const usersUIEvents = {
     newUserButtonClick: () => {
-      history.push("/users/new");
+      history.push("/settings/users/new");
     },
     openEditUserPage: (id) => {
-      history.push(`/users/${id}/edit`);
+      history.push(`/settings/users/${id}/edit`);
     },
     openDeleteUserDialog: (id) => {
-      history.push(`/users/${id}/delete`);
+      history.push(`/settings/users/${id}/delete`);
     },
   };
 
   return (
     <UsersUIProvider usersUIEvents={usersUIEvents}>
       {/* <UsersLoadingDialog /> */}
-      <Route path="/users/:id/delete">
+      <Route path="/settings/users/:id/delete">
         {({ history, match }) => (
           <UserDeleteDialog
             show={match != null}
             id={match && match.params.id}
             onHide={() => {
-              history.push("/users");
+              history.push("/settings/users");
             }}
           />
         )}

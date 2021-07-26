@@ -29,6 +29,18 @@ class AppointmentRepository {
       params: queryParams,
     });
   }
+
+  getVisitorsByKeyword(queryParams) {
+    return Repository.get(`${baseEndpoint}/GetVisitorsForSelect`, {
+      params: queryParams,
+    });
+  }
+
+  getUsersByKeyword(queryParams) {
+    return Repository.get(`${baseEndpoint}/GetUsersForSelect`, {
+      params: queryParams,
+    });
+  }
 }
 
 export default new AppointmentRepository();

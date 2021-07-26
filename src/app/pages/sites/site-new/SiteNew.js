@@ -41,7 +41,7 @@ function SiteNew({ history }) {
   };
 
   const backToSitesList = () => {
-    history.push(`/sites`);
+    history.push(`/settings/sites`);
   };
 
   return (

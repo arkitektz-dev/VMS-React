@@ -8,26 +8,26 @@ import RolesUIProvider from "./RolesUIContext";
 function RolesPage({ history }) {
   const rolesUIEvents = {
     newRoleButtonClick: () => {
-      history.push("/roles/new");
+      history.push("/settings/roles/new");
     },
     openEditRolePage: (id) => {
-      history.push(`/roles/${id}/edit`);
+      history.push(`/settings/roles/${id}/edit`);
     },
     openDeleteRoleDialog: (id) => {
-      history.push(`/roles/${id}/delete`);
+      history.push(`/settings/roles/${id}/delete`);
     },
   };
 
   return (
     <RolesUIProvider rolesUIEvents={rolesUIEvents}>
       {/* <RolesLoadingDialog /> */}
-      <Route path="/roles/:id/delete">
+      <Route path="/settings/roles/:id/delete">
         {({ history, match }) => (
           <RoleDeleteDialog
             show={match != null}
             id={match && match.params.id}
             onHide={() => {
-              history.push("/roles");
+              history.push("/settings/roles");
             }}
           />
         )}

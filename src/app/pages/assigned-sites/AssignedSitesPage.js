@@ -8,13 +8,13 @@ import AssignedSitesUIProvider from "./AssignedSitesUIContext";
 function AssignedSitesPage({ history }) {
   const assignedSitesUIEvents = {
     newAssignedSiteButtonClick: () => {
-      history.push("/assigned-sites/new");
+      history.push("/settings/assigned-sites/new");
     },
     openEditAssignedSitePage: (id) => {
-      history.push(`/assigned-sites/${id}/edit`);
+      history.push(`/settings/assigned-sites/${id}/edit`);
     },
     openDeleteAssignedSiteDialog: (id) => {
-      history.push(`/assigned-sites/${id}/delete`);
+      history.push(`/settings/assigned-sites/${id}/delete`);
     },
   };
 
@@ -22,13 +22,13 @@ function AssignedSitesPage({ history }) {
     <AssignedSitesUIProvider assignedSitesUIEvents={assignedSitesUIEvents}>
       <AssignedSitesLoadingDialog />
 
-      <Route path="/assigned-sites/:id/delete">
+      <Route path="/settings/assigned-sites/:id/delete">
         {({ history, match }) => (
           <AssignedSiteDeleteDialog
             show={match != null}
             id={match && match.params.id}
             onHide={() => {
-              history.push("/assigned-sites");
+              history.push("/settings/assigned-sites");
             }}
           />
         )}

@@ -73,7 +73,7 @@ function AssignedSiteEdit({
   };
 
   const backToAssignedSitesList = () => {
-    history.push(`/assigned-sites`);
+    history.push(`/settings/assigned-sites`);
   };
 
   return (

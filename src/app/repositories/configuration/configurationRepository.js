@@ -1,10 +1,11 @@
 import Repository from "../Repository";
+import AppConsts from "./../../config/appconst";
+
+const baseEndpoint = `${AppConsts.appBaseUrl}AbpUserConfiguration`;
 
 class ConfigurationRepository {
-  async getAll() {
-    const result = await Repository.get(`AbpUserConfiguration/GetAll`);
-
-    return result.data.result;
+  getAll() {
+    return Repository.get(`${baseEndpoint}/GetAll`);
   }
 }
 

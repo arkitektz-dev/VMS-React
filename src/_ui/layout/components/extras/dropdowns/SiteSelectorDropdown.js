@@ -1,19 +1,19 @@
 import React from "react";
-import { Dropdown, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 function SiteSelectorDropdown() {
-  const { user } = useSelector((state) => state.auth);
+  const { assignedSites } = useSelector((state) => state.auth.user);
 
-  if (!user.assignedSites) {
+  if (!assignedSites || assignedSites.length <= 0) {
     return null;
   }
 
   return (
     <Form.Control as="select">
-      {user.assignedSites.map((s) => (
-        <option key={s.id} value={s.id}>
-          {s.siteName}
+      {assignedSites.map((site) => (
+        <option key={site.id} value={site.id}>
+          {site.siteName}
         </option>
       ))}
     </Form.Control>

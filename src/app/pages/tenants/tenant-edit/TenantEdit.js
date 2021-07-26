@@ -65,7 +65,7 @@ function TenantEdit({
   };
 
   const backToTenantsList = () => {
-    history.push(`/tenants`);
+    history.push(`/settings/tenants`);
   };
 
   return (

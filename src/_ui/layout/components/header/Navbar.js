@@ -24,9 +24,9 @@ function Navbar() {
         </button>
 
         <ul className="navbar-nav navbar-nav-right">
-          {/* <SiteSelectorDropdown /> */}
+          <SiteSelectorDropdown />
 
-          {/* <UserProfileDropdown /> */}
+          <UserProfileDropdown />
         </ul>
       </div>
     </nav>

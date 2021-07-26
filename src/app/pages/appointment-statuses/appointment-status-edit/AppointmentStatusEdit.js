@@ -67,7 +67,7 @@ function AppointmentStatusEdit({
   };
 
   const backToAppointmentStatusesList = () => {
-    history.push(`/appointment-statuses`);
+    history.push(`/settings/appointment-statuses`);
   };
 
   return (

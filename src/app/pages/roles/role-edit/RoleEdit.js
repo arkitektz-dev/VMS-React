@@ -68,7 +68,7 @@ function RoleEdit({
   };
 
   const backToRolesList = () => {
-    history.push(`/roles`);
+    history.push(`/settings/roles`);
   };
 
   return (
