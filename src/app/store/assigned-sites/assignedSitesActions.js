@@ -57,8 +57,9 @@ export const deleteAssignedSite = (id) => (dispatch) => {
 export const createAssignedSite = (assignedSiteForCreation) => (dispatch) => {
   dispatch(actions.startCall({ callType: callTypes.action }));
   return assignedSiteRepository
-    .create(assignedSiteForCreation)
+    .assignSites(assignedSiteForCreation)
     .then((response) => {
+      console.log(response);
       const { assignedSite } = response.data.result;
       dispatch(actions.assignedSiteCreated({ assignedSite }));
     })

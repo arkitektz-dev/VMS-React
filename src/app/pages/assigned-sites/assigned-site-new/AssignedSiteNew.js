@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import * as actions from "../../../store/assigned-sites/assignedSitesActions";
+import * as sitesActions from "../../../store/sites/sitesActions";
+import * as usersActions from "../../../store/users/usersActions";
 import {
   Card,
   CardBody,
@@ -12,13 +14,8 @@ import SVG from "react-inlinesvg";
 import { useSubheader } from "../../../../_ui/layout/core/Subheader";
 
 const initAssignedSite = {
-  assignedSiteName: "",
-  name: "",
-  surname: "",
-  emailAddress: "",
-  isActive: true,
-  roleNames: [],
-  password: "",
+  userId: "",
+  sites: []
 };
 
 function AssignedSiteNew({ history }) {
@@ -29,8 +26,22 @@ function AssignedSiteNew({ history }) {
 
   const dispatch = useDispatch();
 
+  // Getting users and sites list from store
+  const { users, sites } = useSelector(
+    (state) => ({ users: state.users.entities, sites: state.sites.entities }),
+    shallowEqual
+  );
+
   useEffect(() => {
     subheader.setTitle(title);
+
+    if (!sites) {
+      dispatch(sitesActions.fetchSites());
+    }
+
+    if (!users) {
+      dispatch(usersActions.fetchUsers());
+    }
   }, []);
 
   const saveAssignedSite = (values) => {

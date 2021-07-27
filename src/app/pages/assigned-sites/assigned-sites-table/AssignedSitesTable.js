@@ -35,7 +35,7 @@ function AssignedSitesTable() {
     shallowEqual
   );
   const { totalCount, entities, listLoading } = currentState;
-
+    console.log(entities);
   // AssignedSites Redux state
   const dispatch = useDispatch();
   useEffect(() => {
@@ -48,30 +48,31 @@ function AssignedSitesTable() {
     {
       dataField: "name",
       text: "Name",
-      sort: true,
+      sort: false,
       sortCaret,
     },
     {
-      dataField: "assignedSiteName",
-      text: "AssignedSite Name",
-      sort: true,
+      dataField: "assignedSitesName",
+      text: "Assigned Sites",
+      formatter: columnFormatters.AssignedSiteColumnFormatter,
+      sort: false,
       sortCaret,
     },
-    {
-      dataField: "action",
-      text: "Actions",
-      formatter: columnFormatters.ActionsColumnFormatter,
-      formatExtraData: {
-        openEditAssignedSitePage: assignedSitesUIProps.openEditAssignedSitePage,
-        openDeleteAssignedSiteDialog:
-          assignedSitesUIProps.openDeleteAssignedSiteDialog,
-      },
-      classes: "text-right pr-0",
-      headerClasses: "text-right pr-3",
-      style: {
-        minWidth: "100px",
-      },
-    },
+    // {
+    //   dataField: "action",
+    //   text: "Actions",
+    //   formatter: columnFormatters.ActionsColumnFormatter,
+    //   formatExtraData: {
+    //     openEditAssignedSitePage: assignedSitesUIProps.openEditAssignedSitePage,
+    //     openDeleteAssignedSiteDialog:
+    //       assignedSitesUIProps.openDeleteAssignedSiteDialog,
+    //   },
+    //   classes: "text-right pr-0",
+    //   headerClasses: "text-right pr-3",
+    //   style: {
+    //     minWidth: "100px",
+    //   },
+    // },
   ];
 
   // Table pagination properties
@@ -97,7 +98,7 @@ function AssignedSitesTable() {
                 bootstrap4
                 bordered={false}
                 remote
-                keyField="id"
+                keyField="userId"
                 data={entities === null ? [] : entities}
                 columns={columns}
                 defaultSorted={uiHelpers.defaultSorted}

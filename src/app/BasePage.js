@@ -4,6 +4,7 @@ import { useSelector, shallowEqual } from "react-redux";
 import { SplashScreen } from "./../_ui/layout/elements";
 
 import DashboardPage from "./pages/dashboard/DashboardPage";
+import TenantDashboardPage from "./pages/dashboard/TenantDashboardPage";
 
 import VisitorsPage from "./pages/visitors/VisitorsPage";
 import VisitorEdit from "./pages/visitors/visitor-edit/VisitorEdit";
@@ -38,7 +39,7 @@ function BasePage() {
         )}
 
         {/* invitations */}
-        {permissions.grantedPermissions["Pages.Invitations"] && (
+        {permissions.grantedPermissions["Pages.MyInvitations"] && (
           <Switch path="/invitations">
             <Route path="/invitations/new" component={InvitationNew} />
             <Route path="/invitations/:id/edit" component={InvitationEdit} />
@@ -56,7 +57,7 @@ function BasePage() {
         )}
 
         {/* dashboard */}
-        <Route path="/" component={DashboardPage} />
+        <Route path="/" component={TenantDashboardPage} />
       </Switch>
     </Suspense>
   );

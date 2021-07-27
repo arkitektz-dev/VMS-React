@@ -9,6 +9,7 @@ import { invitationsSlice } from "./invitations/invitationsSlice";
 import { appointmentsSlice } from "./appointments/appointmentsSlice";
 import { assignedSitesSlice } from "./assigned-sites/assignedSitesSlice";
 import { appointmentStatusesSlice } from "./appointment-statuses/appointmentStatusesSlice";
+import { dashboardSlice } from "./dashboard/dashboardSlice";
 import probeApplication from "./probe-application/reducer";
 
 export default combineReducers({
@@ -22,5 +23,6 @@ export default combineReducers({
   appointments: appointmentsSlice.reducer,
   assignedSites: assignedSitesSlice.reducer,
   appointmentStatuses: appointmentStatusesSlice.reducer,
+  dashboard: dashboardSlice.reducer,
   probeApplication,
 });

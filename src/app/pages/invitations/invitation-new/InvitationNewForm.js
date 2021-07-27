@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
-import { Input, TextArea } from "./../../../../_ui/layout/elements";
+import {
+  Input,
+  ReactSelectAsync,
+  TextArea,
+} from "./../../../../_ui/layout/elements";
+import AsyncSelect from "react-select/async";
 import * as Yup from "yup";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import InvitationRepository from "../../../repositories/invitation/invitationRepository";
 
 // Validation schema
 const InvitationNewSchema = Yup.object().shape({
-  visitorId: Yup.string().required("Visitor is required"),
+  // visitorId: Yup.string().required("Visitor is required"),
   date: Yup.string().required("Date is required"),
   time: Yup.string().required("Time is required"),
   purposeOfVisit: Yup.string(),
@@ -15,11 +21,20 @@ const InvitationNewSchema = Yup.object().shape({
 });
 
 function InvitationNewForm({ invitation, btnRef, saveInvitation }) {
-  // Getting visitors list from store
-  const { visitors } = useSelector(
-    (state) => ({ visitors: state.visitors.entities }),
-    shallowEqual
-  );
+
+  const visitorLoadOptions = async (inputValue) => {
+    const response = await InvitationRepository.getVisitorsByKeyword({
+      term: inputValue,
+    });
+    const options = response.data.result.map((visitor) => ({
+      value: visitor.id,
+      label: visitor.fullNameWithContactNumber,
+    }));
+
+    return new Promise((resolve) => {
+      resolve(options);
+    });
+  };
 
   return (
     <>
@@ -28,28 +43,26 @@ function InvitationNewForm({ invitation, btnRef, saveInvitation }) {
         initialValues={invitation}
         validationSchema={InvitationNewSchema}
         onSubmit={(values) => {
-          saveInvitation(values);
+          const reqObj = {
+            ...values,
+            visitorId: values.visitorId.value
+          };
+
+          saveInvitation(reqObj);
         }}
       >
-        {({ values, handleSubmit }) => (
+        {({ values, setFieldValue, handleSubmit }) => (
           <>
             <Form className="form form-label-right">
               <div className="form-group row">
                 <div className="col-lg-12">
                   <Field
-                    as="select"
                     name="visitorId"
-                    className="form-control"
+                    component={ReactSelectAsync}
+                    loadOptions={visitorLoadOptions}
                     label="Visitor"
-                  >
-                    <option value="">Please Select Visitor</option>
-                    {visitors &&
-                      visitors.map((visitor) => (
-                        <option key={visitor.id} value={visitor.id}>
-                          {visitor.firstName}
-                        </option>
-                      ))}
-                  </Field>
+                    onChange={(selectedOption) => setFieldValue("visitorId", selectedOption)}
+                  />
                 </div>
               </div>
               <div className="form-group row">

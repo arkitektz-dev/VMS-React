@@ -30,6 +30,7 @@ function SubHeaderSettings() {
               {subheader.title}
             </h5>
           </div>
+          <Link to="/">Home</Link>
           <BreadCrumbs items={subheader.breadcrumbs} />
         </div>
       </div>

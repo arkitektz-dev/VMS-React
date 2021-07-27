@@ -29,6 +29,12 @@ class InvitationRepository {
       params: queryParams,
     });
   }
+  
+  getVisitorsByKeyword(queryParams) {
+    return Repository.get(`${baseEndpoint}/GetVisitorsForSelect`, {
+      params: queryParams,
+    });
+  }
 }
 
 export default new InvitationRepository();

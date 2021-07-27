@@ -1,7 +1,7 @@
 import dashboardRepository from "../../repositories/dashboard/dashboardRepository";
-import { dashboardsSlice, callTypes } from "./dashboardsSlice";
+import { dashboardSlice, callTypes } from "./dashboardSlice";
 
-const { actions } = dashboardsSlice;
+const { actions } = dashboardSlice;
 
 export const fetchAdminDashboardStatistics = (queryParams) => (dispatch) => {
   dispatch(actions.startCall({ callType: callTypes.list }));
@@ -24,8 +24,8 @@ export const fetchTenantDashboardStatistics = (queryParams) => (dispatch) => {
     .getTenant(queryParams)
     .then((response) => {
       console.log(response);
-      //   const { totalCount, items: entities } = response.data.result;
-      //   dispatch(actions.dashboardsFetched({ totalCount, entities }));
+        const { result: statistics } = response.data;
+        dispatch(actions.statisticsFetched({  statistics }));
     })
     .catch((error) => {
       error.clientMessage = "Can't find dashboards";

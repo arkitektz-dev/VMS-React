@@ -34,7 +34,7 @@ function AppointmentNewForm({ appointment, btnRef, saveAppointment }) {
   };
 
   const onVisitorChange = async (visitorId) => {
-    const response = await AppointmentRepository.getVisitorsByKeyword({
+    const response = await AppointmentRepository.getUsersByKeyword({
       term: visitorId,
     });
     setUsers(response.data.result);
@@ -77,7 +77,7 @@ function AppointmentNewForm({ appointment, btnRef, saveAppointment }) {
                     {users &&
                       users.map((user) => (
                         <option key={user.id} value={user.id}>
-                          {user.name}
+                          {user.fullName}
                         </option>
                       ))}
                   </Field>

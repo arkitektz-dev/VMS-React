@@ -37,10 +37,10 @@ function* userRequested() {
 
 function* configurationRequested() {
   try {
-    const result = yield ConfigurationRepository.getAll();
-    yield put(actions.setConfiguration(result));
-    Utils.extend(true, abp, result);
-    abp.clock.provider = Utils.getCurrentClockProvider(result.clock.provider);
+    const response = yield ConfigurationRepository.getAll();
+    yield put(actions.setConfiguration(response.data.result));
+    Utils.extend(true, abp, response.data.result);
+    abp.clock.provider = Utils.getCurrentClockProvider(response.data.result.clock.provider);
   } catch (error) {
     console.log(error);
   }

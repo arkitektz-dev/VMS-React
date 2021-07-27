@@ -75,7 +75,7 @@ export const appRouters = [
     path: "/invitations",
     exact: true,
     name: "invitations",
-    permission: "Pages.Invitations",
+    permission: "Pages.MyInvitations",
     title: "Invitations",
     component: InvitationsPage,
     isLayout: true,

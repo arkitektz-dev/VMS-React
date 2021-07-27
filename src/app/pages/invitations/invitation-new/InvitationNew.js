@@ -29,18 +29,8 @@ function InvitationNew({ history }) {
 
   const dispatch = useDispatch();
 
-  // Getting visitors list from store
-  const { visitors } = useSelector(
-    (state) => ({ visitors: state.visitors.entities }),
-    shallowEqual
-  );
-
   useEffect(() => {
     subheader.setTitle(title);
-
-    if (!visitors) {
-      dispatch(visitorActions.fetchVisitors());
-    }
   }, []);
 
   const saveInvitation = (values) => {

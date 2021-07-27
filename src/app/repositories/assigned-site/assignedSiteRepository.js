@@ -29,6 +29,13 @@ class AssignedSiteRepository {
       params: queryParams,
     });
   }
+
+  assignSites(createAssignedSiteInput) {
+    return Repository.post(
+      `${baseEndpoint}/InsertNewSites?userId=${createAssignedSiteInput.userId}`,
+      createAssignedSiteInput.sites
+    );
+  }
 }
 
 export default new AssignedSiteRepository();

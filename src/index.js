@@ -15,11 +15,6 @@ const abp = window.abp;
 setupAxiosInterceptors();
 
 ConfigurationRepository.getAll().then((response) => {
-  Utils.extend(true, abp, response.data.result);
-  abp.clock.provider = Utils.getCurrentClockProvider(
-    response.data.result.clock.provider
-  );
-
   ReactDOM.render(
     <Provider store={store}>
       <SubheaderProvider>
@@ -32,6 +27,5 @@ ConfigurationRepository.getAll().then((response) => {
     </Provider>,
     document.getElementById("root")
   );
-
   serviceWorker.unregister();
 });
