@@ -8,10 +8,11 @@ import { SettingsLayout } from "./../_ui/layout/components/SettingsLayout";
 import { shallowEqual, useSelector } from "react-redux";
 
 function Routes() {
-  const { isAuthorized } = useSelector(
+  const { isAuthorized, tenant } = useSelector(
     ({ auth }) => ({
       isAuthorized:
         auth.accessToken != null && auth.user !== null && auth.permissions,
+      tenant: auth.tenant,
     }),
     shallowEqual
   );

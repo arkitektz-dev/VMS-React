@@ -28,7 +28,6 @@ function* loginSaga({ payload }) {
 function* userRequested() {
   try {
     const result = yield AuthRepository.getCurrentLoginInformations();
-    console.log(result);
     yield put(actions.setUser(result));
   } catch (error) {
     console.log(error);

@@ -17,7 +17,7 @@ function TenantDashboardPage() {
   const dispatch = useDispatch();
   useEffect(() => {
     // server call by queryParams
-    dispatch(actions.fetchTenantDashboardStatistics());
+    // dispatch(actions.fetchTenantDashboardStatistics());
   }, [dispatch]);
 
   const data = {

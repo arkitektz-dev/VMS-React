@@ -73,7 +73,7 @@ function Login() {
       AuthRepository.authenticate(input)
         .then((data) => {
           data.rememberMe = input.rememberClient;
-
+          console.log(data);
           dispatch(actions.login(data));
         })
         .catch((err) => {

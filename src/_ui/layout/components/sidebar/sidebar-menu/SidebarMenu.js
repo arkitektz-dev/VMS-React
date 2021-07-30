@@ -8,13 +8,15 @@ import { useSelector } from "react-redux";
 import { shallowEqual } from "react-redux";
 
 function SidebarMenu() {
-  const { permissions } = useSelector(
+  const { permissions, isSuperAdmin } = useSelector(
     ({ auth }) => ({
       permissions: auth.permissions,
+      isSuperAdmin: auth.tenant === null,
     }),
     shallowEqual
   );
 
+    console.log(isSuperAdmin);
   const [menuExpandedItems, setMenuExpandedItems] = useState([]);
 
   const { pathname } = useLocation();
@@ -53,6 +55,8 @@ function SidebarMenu() {
       {appRouters.map((route, index) => {
         if (route.permission && !isGranted(route.permission, permissions))
           return null;
+
+        if (route.showInAdminMenu && !isSuperAdmin) return null;
 
         return (
           <li
