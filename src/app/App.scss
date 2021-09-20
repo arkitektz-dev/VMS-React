@@ -28,6 +28,7 @@
 @import "../assets/styles/mixins/blockqoute";
 @import "../assets/styles/mixins/svg-icon";
 @import "../assets/styles/mixins/checkbox";
+@import "../assets/styles/mixins/symbol";
 
 /* === Core Styles === */
 @import "../assets/styles/typography";
@@ -58,6 +59,10 @@
 @import "../assets/styles/components/svg";
 
 @import "../assets/styles/components/landing-screens/auth";
+
+/* === Helpers === */
+@import "../assets/styles/components/helpers/flex";
+@import "../assets/styles/components/helpers/text";
 
 /* === Plugin Overrides === */
 @import "../assets/styles/components/plugin-overrides/slick-carousel";

@@ -57,7 +57,8 @@ function BasePage() {
         )}
 
         {/* dashboard */}
-        <Route path="/" component={TenantDashboardPage} />
+        {/* <Route path="/" component={TenantDashboardPage} /> */}
+        <Route path="/" component={DashboardPage} />
       </Switch>
     </Suspense>
   );
